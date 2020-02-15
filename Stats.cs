@@ -9,13 +9,19 @@ namespace Halo_Streamer_Tools
   public partial class Stats
   {
     [JsonProperty("redteam")]
-    public BlueteamClass Redteam { get; set; }
+    public List<TeamElement> Redteam { get; set; }
 
     [JsonProperty("blueteam")]
-    public BlueteamClass Blueteam { get; set; }
+    public List<TeamElement> Blueteam { get; set; }
 
     [JsonProperty("mvp")]
     public string Mvp { get; set; }
+
+    public Stats(dynamic Redteam, dynamic Blueteam)
+    {
+      this.Redteam = Redteam;
+      this.Blueteam = Blueteam;
+    }
   }
 
   public partial class BlueteamClass
@@ -33,7 +39,7 @@ namespace Halo_Streamer_Tools
     public TeamElement[] Players { get; set; }
   }
 
-  public partial class TeamElement
+  public class TeamElement
   {
     [JsonProperty("gamertag", NullValueHandling = NullValueHandling.Ignore)]
     public string Gamertag { get; set; }
@@ -52,6 +58,16 @@ namespace Halo_Streamer_Tools
 
     [JsonProperty("damage")]
     public double Damage { get; set; }
+
+    public TeamElement(dynamic Gamertag, dynamic Kills, dynamic Deaths, dynamic Assists, dynamic Damage)
+    {
+      this.Gamertag = Gamertag;
+      this.Kills = Kills;
+      this.Deaths = Deaths;
+      this.Assists = Assists;
+      //this.Kd = Kills / Deaths;
+      this.Damage = Damage;
+    }
   }
 
   public partial class Standing

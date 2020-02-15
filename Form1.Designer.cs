@@ -42,14 +42,14 @@
       this.label7 = new System.Windows.Forms.Label();
       this.label8 = new System.Windows.Forms.Label();
       this.label9 = new System.Windows.Forms.Label();
-      this.textBox4 = new System.Windows.Forms.TextBox();
+      this.txt_blueFour = new System.Windows.Forms.TextBox();
       this.label10 = new System.Windows.Forms.Label();
       this.label11 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
       this.label13 = new System.Windows.Forms.Label();
-      this.textBox5 = new System.Windows.Forms.TextBox();
-      this.textBox6 = new System.Windows.Forms.TextBox();
-      this.textBox7 = new System.Windows.Forms.TextBox();
+      this.txt_blueThree = new System.Windows.Forms.TextBox();
+      this.txt_blueTwo = new System.Windows.Forms.TextBox();
+      this.txt_blueOne = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
@@ -174,12 +174,12 @@
       this.label9.TabIndex = 9;
       this.label9.Text = "Player 4";
       // 
-      // textBox4
+      // txt_blueFour
       // 
-      this.textBox4.Location = new System.Drawing.Point(437, 219);
-      this.textBox4.Name = "textBox4";
-      this.textBox4.Size = new System.Drawing.Size(226, 23);
-      this.textBox4.TabIndex = 1;
+      this.txt_blueFour.Location = new System.Drawing.Point(437, 219);
+      this.txt_blueFour.Name = "txt_blueFour";
+      this.txt_blueFour.Size = new System.Drawing.Size(226, 23);
+      this.txt_blueFour.TabIndex = 1;
       // 
       // label10
       // 
@@ -217,26 +217,26 @@
       this.label13.TabIndex = 9;
       this.label13.Text = "Player 1";
       // 
-      // textBox5
+      // txt_blueThree
       // 
-      this.textBox5.Location = new System.Drawing.Point(437, 180);
-      this.textBox5.Name = "textBox5";
-      this.textBox5.Size = new System.Drawing.Size(226, 23);
-      this.textBox5.TabIndex = 1;
+      this.txt_blueThree.Location = new System.Drawing.Point(437, 180);
+      this.txt_blueThree.Name = "txt_blueThree";
+      this.txt_blueThree.Size = new System.Drawing.Size(226, 23);
+      this.txt_blueThree.TabIndex = 1;
       // 
-      // textBox6
+      // txt_blueTwo
       // 
-      this.textBox6.Location = new System.Drawing.Point(437, 141);
-      this.textBox6.Name = "textBox6";
-      this.textBox6.Size = new System.Drawing.Size(226, 23);
-      this.textBox6.TabIndex = 1;
+      this.txt_blueTwo.Location = new System.Drawing.Point(437, 141);
+      this.txt_blueTwo.Name = "txt_blueTwo";
+      this.txt_blueTwo.Size = new System.Drawing.Size(226, 23);
+      this.txt_blueTwo.TabIndex = 1;
       // 
-      // textBox7
+      // txt_blueOne
       // 
-      this.textBox7.Location = new System.Drawing.Point(437, 102);
-      this.textBox7.Name = "textBox7";
-      this.textBox7.Size = new System.Drawing.Size(226, 23);
-      this.textBox7.TabIndex = 1;
+      this.txt_blueOne.Location = new System.Drawing.Point(437, 102);
+      this.txt_blueOne.Name = "txt_blueOne";
+      this.txt_blueOne.Size = new System.Drawing.Size(226, 23);
+      this.txt_blueOne.TabIndex = 1;
       // 
       // label14
       // 
@@ -258,14 +258,14 @@
       this.Controls.Add(this.label6);
       this.Controls.Add(this.startStop);
       this.Controls.Add(this.label14);
-      this.Controls.Add(this.textBox7);
-      this.Controls.Add(this.textBox6);
-      this.Controls.Add(this.textBox5);
+      this.Controls.Add(this.txt_blueOne);
+      this.Controls.Add(this.txt_blueTwo);
+      this.Controls.Add(this.txt_blueThree);
       this.Controls.Add(this.label13);
       this.Controls.Add(this.label12);
       this.Controls.Add(this.label11);
       this.Controls.Add(this.label10);
-      this.Controls.Add(this.textBox4);
+      this.Controls.Add(this.txt_blueFour);
       this.Controls.Add(this.txt_redFour);
       this.Controls.Add(this.label9);
       this.Controls.Add(this.label8);
@@ -300,14 +300,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_blueFour;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_blueThree;
+        private System.Windows.Forms.TextBox txt_blueTwo;
+        private System.Windows.Forms.TextBox txt_blueOne;
         private System.Windows.Forms.Label label14;
     }
 }
