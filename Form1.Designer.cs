@@ -37,17 +37,9 @@
       this.label5 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.txt_redTwo = new System.Windows.Forms.TextBox();
-      this.txt_redThree = new System.Windows.Forms.TextBox();
-      this.txt_redFour = new System.Windows.Forms.TextBox();
       this.label7 = new System.Windows.Forms.Label();
-      this.label8 = new System.Windows.Forms.Label();
-      this.label9 = new System.Windows.Forms.Label();
-      this.txt_blueFour = new System.Windows.Forms.TextBox();
-      this.label10 = new System.Windows.Forms.Label();
-      this.label11 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
       this.label13 = new System.Windows.Forms.Label();
-      this.txt_blueThree = new System.Windows.Forms.TextBox();
       this.txt_blueTwo = new System.Windows.Forms.TextBox();
       this.txt_blueOne = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
@@ -83,7 +75,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(37, 328);
+      this.label3.Location = new System.Drawing.Point(37, 247);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(72, 15);
       this.label3.TabIndex = 3;
@@ -91,7 +83,7 @@
       // 
       // startStop
       // 
-      this.startStop.Location = new System.Drawing.Point(37, 272);
+      this.startStop.Location = new System.Drawing.Point(37, 191);
       this.startStop.Name = "startStop";
       this.startStop.Size = new System.Drawing.Size(626, 42);
       this.startStop.TabIndex = 4;
@@ -120,7 +112,7 @@
       // label6
       // 
       this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(37, 347);
+      this.label6.Location = new System.Drawing.Point(37, 266);
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(183, 15);
       this.label6.TabIndex = 11;
@@ -133,20 +125,6 @@
       this.txt_redTwo.Size = new System.Drawing.Size(226, 23);
       this.txt_redTwo.TabIndex = 1;
       // 
-      // txt_redThree
-      // 
-      this.txt_redThree.Location = new System.Drawing.Point(104, 180);
-      this.txt_redThree.Name = "txt_redThree";
-      this.txt_redThree.Size = new System.Drawing.Size(226, 23);
-      this.txt_redThree.TabIndex = 1;
-      // 
-      // txt_redFour
-      // 
-      this.txt_redFour.Location = new System.Drawing.Point(104, 219);
-      this.txt_redFour.Name = "txt_redFour";
-      this.txt_redFour.Size = new System.Drawing.Size(226, 23);
-      this.txt_redFour.TabIndex = 1;
-      // 
       // label7
       // 
       this.label7.AutoSize = true;
@@ -155,49 +133,6 @@
       this.label7.Size = new System.Drawing.Size(48, 15);
       this.label7.TabIndex = 9;
       this.label7.Text = "Player 2";
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(37, 183);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(48, 15);
-      this.label8.TabIndex = 9;
-      this.label8.Text = "Player 3";
-      // 
-      // label9
-      // 
-      this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(37, 222);
-      this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(48, 15);
-      this.label9.TabIndex = 9;
-      this.label9.Text = "Player 4";
-      // 
-      // txt_blueFour
-      // 
-      this.txt_blueFour.Location = new System.Drawing.Point(437, 219);
-      this.txt_blueFour.Name = "txt_blueFour";
-      this.txt_blueFour.Size = new System.Drawing.Size(226, 23);
-      this.txt_blueFour.TabIndex = 1;
-      // 
-      // label10
-      // 
-      this.label10.AutoSize = true;
-      this.label10.Location = new System.Drawing.Point(370, 222);
-      this.label10.Name = "label10";
-      this.label10.Size = new System.Drawing.Size(48, 15);
-      this.label10.TabIndex = 9;
-      this.label10.Text = "Player 4";
-      // 
-      // label11
-      // 
-      this.label11.AutoSize = true;
-      this.label11.Location = new System.Drawing.Point(370, 183);
-      this.label11.Name = "label11";
-      this.label11.Size = new System.Drawing.Size(48, 15);
-      this.label11.TabIndex = 9;
-      this.label11.Text = "Player 3";
       // 
       // label12
       // 
@@ -216,13 +151,6 @@
       this.label13.Size = new System.Drawing.Size(48, 15);
       this.label13.TabIndex = 9;
       this.label13.Text = "Player 1";
-      // 
-      // txt_blueThree
-      // 
-      this.txt_blueThree.Location = new System.Drawing.Point(437, 180);
-      this.txt_blueThree.Name = "txt_blueThree";
-      this.txt_blueThree.Size = new System.Drawing.Size(226, 23);
-      this.txt_blueThree.TabIndex = 1;
       // 
       // txt_blueTwo
       // 
@@ -252,26 +180,18 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(701, 389);
+      this.ClientSize = new System.Drawing.Size(701, 296);
+      this.Controls.Add(this.startStop);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.label6);
-      this.Controls.Add(this.startStop);
       this.Controls.Add(this.label14);
       this.Controls.Add(this.txt_blueOne);
       this.Controls.Add(this.txt_blueTwo);
-      this.Controls.Add(this.txt_blueThree);
       this.Controls.Add(this.label13);
       this.Controls.Add(this.label12);
-      this.Controls.Add(this.label11);
-      this.Controls.Add(this.label10);
-      this.Controls.Add(this.txt_blueFour);
-      this.Controls.Add(this.txt_redFour);
-      this.Controls.Add(this.label9);
-      this.Controls.Add(this.label8);
       this.Controls.Add(this.label7);
       this.Controls.Add(this.label5);
-      this.Controls.Add(this.txt_redThree);
       this.Controls.Add(this.txt_redTwo);
       this.Controls.Add(this.txt_redOne);
       this.Controls.Add(this.label2);
@@ -295,17 +215,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_redTwo;
-        private System.Windows.Forms.TextBox txt_redThree;
-        private System.Windows.Forms.TextBox txt_redFour;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_blueFour;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_blueThree;
         private System.Windows.Forms.TextBox txt_blueTwo;
         private System.Windows.Forms.TextBox txt_blueOne;
         private System.Windows.Forms.Label label14;

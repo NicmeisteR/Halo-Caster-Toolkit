@@ -45,16 +45,16 @@ namespace Halo_Streamer_Tools
     public string Gamertag { get; set; }
 
     [JsonProperty("kills")]
-    public long Kills { get; set; }
+    public int Kills { get; set; }
 
     [JsonProperty("deaths")]
-    public long Deaths { get; set; }
+    public int Deaths { get; set; }
 
     [JsonProperty("assists")]
     public long Assists { get; set; }
 
     [JsonProperty("kd")]
-    public double Kd { get; set; }
+    public int Kd { get; set; }
 
     [JsonProperty("damage")]
     public double Damage { get; set; }

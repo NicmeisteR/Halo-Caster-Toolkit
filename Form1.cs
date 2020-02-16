@@ -28,7 +28,7 @@ namespace Halo_Streamer_Tools
     private CancellationTokenSource cancelSource;
 
 
-    private string ApiKey = "";
+    private string ApiKey = "Your-API-Key-HERE";
 
     public List<TeamElement> RedTeamStart = new List<TeamElement>();
     public List<TeamElement> BlueTeamStart = new List<TeamElement>();
@@ -49,8 +49,8 @@ namespace Halo_Streamer_Tools
     private void startStop_Click(object sender, EventArgs e)
     {
 
-      RedTeam = new List<string>(new string[] { txt_redOne.Text, txt_redTwo.Text, txt_redThree.Text, txt_redFour.Text });
-      BlueTeam = new List<string>(new string[] { txt_blueOne.Text, txt_blueTwo.Text, txt_blueThree.Text, txt_blueFour.Text });
+      RedTeam = new List<string>(new string[] { txt_redOne.Text, txt_redTwo.Text });
+      BlueTeam = new List<string>(new string[] { txt_blueOne.Text, txt_blueTwo.Text });
 
       //foreach (string player in BlueTeam)
       //{
@@ -97,7 +97,7 @@ namespace Halo_Streamer_Tools
 
     public void Start()
     {
-      var ResponseObjects = JsonConvert.DeserializeObject<dynamic>(Get($"stats/h5/servicerecords/custom?players={RedTeam[0]},{RedTeam[1]},{RedTeam[2]},{RedTeam[3]},{BlueTeam[0]},{BlueTeam[1]},{BlueTeam[2]},{BlueTeam[3]}"));
+      var ResponseObjects = JsonConvert.DeserializeObject<dynamic>(Get($"stats/h5/servicerecords/custom?players={RedTeam[0]},{RedTeam[1]},{BlueTeam[0]},{BlueTeam[1]}"));
 
       RedTeamStart.Add(new TeamElement(
         ResponseObjects.Results[0].Result.PlayerId.Gamertag,
@@ -112,50 +112,22 @@ namespace Halo_Streamer_Tools
         ResponseObjects.Results[1].Result.CustomStats.TotalDeaths,
         ResponseObjects.Results[1].Result.CustomStats.TotalAssists,
         ResponseObjects.Results[1].Result.CustomStats.TotalWeaponDamage
-      ));
-      RedTeamStart.Add(new TeamElement(
-        ResponseObjects.Results[2].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[2].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[2].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[2].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[2].Result.CustomStats.TotalWeaponDamage
-      ));
-      RedTeamStart.Add(new TeamElement(
-        ResponseObjects.Results[3].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[3].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[3].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[3].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[3].Result.CustomStats.TotalWeaponDamage
       ));
 
       BlueTeamStart.Add(new TeamElement (
-        ResponseObjects.Results[4].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[4].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[4].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[4].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[4].Result.CustomStats.TotalWeaponDamage
+        ResponseObjects.Results[2].Result.PlayerId.Gamertag,
+        ResponseObjects.Results[2].Result.CustomStats.TotalKills,
+        ResponseObjects.Results[2].Result.CustomStats.TotalDeaths,
+        ResponseObjects.Results[2].Result.CustomStats.TotalAssists,
+        ResponseObjects.Results[2].Result.CustomStats.TotalWeaponDamage
       ));
       BlueTeamStart.Add(new TeamElement(
-        ResponseObjects.Results[5].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[5].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[5].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[5].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[5].Result.CustomStats.TotalWeaponDamage
-      ));
-      BlueTeamStart.Add(new TeamElement(
-        ResponseObjects.Results[6].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[6].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[6].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[6].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[6].Result.CustomStats.TotalWeaponDamage
-      ));
-      BlueTeamStart.Add(new TeamElement(
-        ResponseObjects.Results[7].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[7].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[7].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[7].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[7].Result.CustomStats.TotalWeaponDamage
-      ));
+        ResponseObjects.Results[3].Result.PlayerId.Gamertag,
+        ResponseObjects.Results[3].Result.CustomStats.TotalKills,
+        ResponseObjects.Results[3].Result.CustomStats.TotalDeaths,
+        ResponseObjects.Results[3].Result.CustomStats.TotalAssists,
+        ResponseObjects.Results[3].Result.CustomStats.TotalWeaponDamage
+      ));                       
 
       RedTeamCurrent.Add(new TeamElement(
         ResponseObjects.Results[0].Result.PlayerId.Gamertag,
@@ -171,50 +143,21 @@ namespace Halo_Streamer_Tools
         ResponseObjects.Results[1].Result.CustomStats.TotalAssists,
         ResponseObjects.Results[1].Result.CustomStats.TotalWeaponDamage
       ));
-      RedTeamCurrent.Add(new TeamElement(
+
+      BlueTeamCurrent.Add(new TeamElement(
         ResponseObjects.Results[2].Result.PlayerId.Gamertag,
         ResponseObjects.Results[2].Result.CustomStats.TotalKills,
         ResponseObjects.Results[2].Result.CustomStats.TotalDeaths,
         ResponseObjects.Results[2].Result.CustomStats.TotalAssists,
         ResponseObjects.Results[2].Result.CustomStats.TotalWeaponDamage
       ));
-      RedTeamCurrent.Add(new TeamElement(
+      BlueTeamCurrent.Add(new TeamElement(
         ResponseObjects.Results[3].Result.PlayerId.Gamertag,
         ResponseObjects.Results[3].Result.CustomStats.TotalKills,
         ResponseObjects.Results[3].Result.CustomStats.TotalDeaths,
         ResponseObjects.Results[3].Result.CustomStats.TotalAssists,
         ResponseObjects.Results[3].Result.CustomStats.TotalWeaponDamage
       ));
-
-      BlueTeamCurrent.Add(new TeamElement(
-        ResponseObjects.Results[4].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[4].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[4].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[4].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[4].Result.CustomStats.TotalWeaponDamage
-      ));
-      BlueTeamCurrent.Add(new TeamElement(
-        ResponseObjects.Results[5].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[5].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[5].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[5].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[5].Result.CustomStats.TotalWeaponDamage
-      ));
-      BlueTeamCurrent.Add(new TeamElement(
-        ResponseObjects.Results[6].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[6].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[6].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[6].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[6].Result.CustomStats.TotalWeaponDamage
-      ));
-      BlueTeamCurrent.Add(new TeamElement(
-        ResponseObjects.Results[7].Result.PlayerId.Gamertag,
-        ResponseObjects.Results[7].Result.CustomStats.TotalKills,
-        ResponseObjects.Results[7].Result.CustomStats.TotalDeaths,
-        ResponseObjects.Results[7].Result.CustomStats.TotalAssists,
-        ResponseObjects.Results[7].Result.CustomStats.TotalWeaponDamage
-      ));
-
 
       Combined.Add(new Stats(
         RedTeamCurrent,
@@ -223,18 +166,12 @@ namespace Halo_Streamer_Tools
 
 
       File.WriteAllText(_outputPath + $"/RedTeamStart.json", JsonConvert.SerializeObject(RedTeamStart));
-      File.WriteAllText(_outputPath + $"/BlueTeamStart_data.json", JsonConvert.SerializeObject(BlueTeamStart));
-
-      StartWins = ResponseObjects.Results[0].Result.CustomStats.TotalGamesWon;
-      //StartKills = ResponseObjects.Results[0].Result.CustomStats.TotalKills;
-      StartHeadshots = ResponseObjects.Results[0].Result.CustomStats.TotalHeadshots;
-      StartXp = ResponseObjects.Results[0].Result.Xp;
+      File.WriteAllText(_outputPath + $"/BlueTeamStart.json", JsonConvert.SerializeObject(BlueTeamStart));
     }
 
     void ShowStats()
     {
-      var ResponseObjects = JsonConvert.DeserializeObject<dynamic>(Get($"stats/h5/servicerecords/custom?players={RedTeam[0]},{RedTeam[1]},{RedTeam[2]},{RedTeam[3]},{BlueTeam[0]},{BlueTeam[1]},{BlueTeam[2]},{BlueTeam[3]}"));
-
+      var ResponseObjects = JsonConvert.DeserializeObject<dynamic>(Get($"stats/h5/servicerecords/custom?players={RedTeam[0]},{RedTeam[1]},{BlueTeam[0]},{BlueTeam[1]}"));
 
       RedTeamCurrent[0].Kills = ResponseObjects.Results[0].Result.CustomStats.TotalKills - RedTeamStart[0].Kills;
       RedTeamCurrent[0].Deaths = ResponseObjects.Results[0].Result.CustomStats.TotalDeaths - RedTeamStart[0].Deaths;
@@ -245,41 +182,50 @@ namespace Halo_Streamer_Tools
       RedTeamCurrent[1].Deaths = ResponseObjects.Results[1].Result.CustomStats.TotalDeaths - RedTeamStart[1].Deaths;
       RedTeamCurrent[1].Assists = ResponseObjects.Results[1].Result.CustomStats.TotalAssists - RedTeamStart[1].Assists;
       RedTeamCurrent[1].Damage = ResponseObjects.Results[1].Result.CustomStats.TotalWeaponDamage - RedTeamStart[1].Damage;
-                     
-      RedTeamCurrent[2].Kills = ResponseObjects.Results[2].Result.CustomStats.TotalKills - RedTeamStart[2].Kills;
-      RedTeamCurrent[2].Deaths = ResponseObjects.Results[2].Result.CustomStats.TotalDeaths - RedTeamStart[2].Deaths;
-      RedTeamCurrent[2].Assists = ResponseObjects.Results[2].Result.CustomStats.TotalAssists - RedTeamStart[2].Assists;
-      RedTeamCurrent[2].Damage = ResponseObjects.Results[2].Result.CustomStats.TotalWeaponDamage - RedTeamStart[2].Damage;
 
-      RedTeamCurrent[3].Kills = ResponseObjects.Results[3].Result.CustomStats.TotalKills - RedTeamStart[3].Kills;
-      RedTeamCurrent[3].Deaths = ResponseObjects.Results[3].Result.CustomStats.TotalDeaths - RedTeamStart[3].Deaths;
-      RedTeamCurrent[3].Assists = ResponseObjects.Results[3].Result.CustomStats.TotalAssists - RedTeamStart[3].Assists;
-      RedTeamCurrent[3].Damage = ResponseObjects.Results[3].Result.CustomStats.TotalWeaponDamage - RedTeamStart[3].Damage;
+      BlueTeamCurrent[0].Kills = ResponseObjects.Results[2].Result.CustomStats.TotalKills - BlueTeamStart[0].Kills;
+      BlueTeamCurrent[0].Deaths = ResponseObjects.Results[2].Result.CustomStats.TotalDeaths - BlueTeamStart[0].Deaths;
+      BlueTeamCurrent[0].Assists = ResponseObjects.Results[2].Result.CustomStats.TotalAssists - BlueTeamStart[0].Assists;
+      BlueTeamCurrent[0].Damage = ResponseObjects.Results[2].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[0].Damage;
 
-      BlueTeamCurrent[0].Kills = ResponseObjects.Results[4].Result.CustomStats.TotalKills - BlueTeamStart[0].Kills;
-      BlueTeamCurrent[0].Deaths = ResponseObjects.Results[4].Result.CustomStats.TotalDeaths - BlueTeamStart[0].Deaths;
-      BlueTeamCurrent[0].Assists = ResponseObjects.Results[4].Result.CustomStats.TotalAssists - BlueTeamStart[0].Assists;
-      BlueTeamCurrent[0].Damage = ResponseObjects.Results[4].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[0].Damage;
-
-      BlueTeamCurrent[1].Kills = ResponseObjects.Results[5].Result.CustomStats.TotalKills - BlueTeamStart[1].Kills;
-      BlueTeamCurrent[1].Deaths = ResponseObjects.Results[5].Result.CustomStats.TotalDeaths - BlueTeamStart[1].Deaths;
-      BlueTeamCurrent[1].Assists = ResponseObjects.Results[5].Result.CustomStats.TotalAssists - BlueTeamStart[1].Assists;
-      BlueTeamCurrent[1].Damage = ResponseObjects.Results[5].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[1].Damage;
-
-      BlueTeamCurrent[2].Kills = ResponseObjects.Results[6].Result.CustomStats.TotalKills - BlueTeamStart[2].Kills;
-      BlueTeamCurrent[2].Deaths = ResponseObjects.Results[6].Result.CustomStats.TotalDeaths - BlueTeamStart[2].Deaths;
-      BlueTeamCurrent[2].Assists = ResponseObjects.Results[6].Result.CustomStats.TotalAssists - BlueTeamStart[2].Assists;
-      BlueTeamCurrent[2].Damage = ResponseObjects.Results[6].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[2].Damage;
-
-      BlueTeamCurrent[3].Kills = ResponseObjects.Results[6].Result.CustomStats.TotalKills - BlueTeamStart[3].Kills;
-      BlueTeamCurrent[3].Deaths = ResponseObjects.Results[6].Result.CustomStats.TotalDeaths - BlueTeamStart[3].Deaths;
-      BlueTeamCurrent[3].Assists = ResponseObjects.Results[6].Result.CustomStats.TotalAssists - BlueTeamStart[3].Assists;
-      BlueTeamCurrent[3].Damage = ResponseObjects.Results[6].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[3].Damage;
+      BlueTeamCurrent[1].Kills = ResponseObjects.Results[3].Result.CustomStats.TotalKills - BlueTeamStart[1].Kills;
+      BlueTeamCurrent[1].Deaths = ResponseObjects.Results[3].Result.CustomStats.TotalDeaths - BlueTeamStart[1].Deaths;
+      BlueTeamCurrent[1].Assists = ResponseObjects.Results[3].Result.CustomStats.TotalAssists - BlueTeamStart[1].Assists;
+      BlueTeamCurrent[1].Damage = ResponseObjects.Results[3].Result.CustomStats.TotalWeaponDamage - BlueTeamStart[1].Damage;
 
       Combined[0].Redteam = RedTeamCurrent;
       Combined[0].Blueteam = BlueTeamCurrent;
 
-      File.WriteAllText(_outputPath + $"/TeamStats.json", JsonConvert.SerializeObject(Combined));
+      int redOneKD = 0;
+      int redTwoKD = 0;
+      int blueOneKD = 0;
+      int blueTwoKD = 0;
+
+      if(RedTeamCurrent[0].Deaths != 0)
+      {
+        redOneKD = RedTeamCurrent[0].Kills / RedTeamCurrent[0].Deaths;
+      }
+
+      if (RedTeamCurrent[1].Deaths != 0)
+      {
+        redTwoKD = RedTeamCurrent[1].Kills / RedTeamCurrent[1].Deaths;
+      }
+
+      if (BlueTeamCurrent[0].Deaths != 0)
+      {
+        blueOneKD = BlueTeamCurrent[0].Kills / BlueTeamCurrent[0].Deaths;
+      }
+
+      if (BlueTeamCurrent[1].Deaths != 0)
+      {
+        blueTwoKD = BlueTeamCurrent[1].Kills / BlueTeamCurrent[1].Deaths;
+      }
+
+      File.WriteAllText(_outputPath + $"/RedOne.txt", $"Gamertag: { RedTeamCurrent[0].Gamertag }\nKills: { RedTeamCurrent[0].Kills }\nDeaths: { RedTeamCurrent[0].Deaths }\nK/D: {redOneKD}\nDamage: { Math.Round(RedTeamCurrent[0].Damage) }");
+      File.WriteAllText(_outputPath + $"/RedTwo.txt", $"Gamertag: { RedTeamCurrent[1].Gamertag }\nKills: { RedTeamCurrent[1].Kills }\nDeaths: { RedTeamCurrent[1].Deaths }\nK/D: {redTwoKD}\nDamage: { Math.Round(RedTeamCurrent[1].Damage) }");
+      File.WriteAllText(_outputPath + $"/BlueOne.txt", $"Gamertag: { BlueTeamCurrent[0].Gamertag }\nKills: { BlueTeamCurrent[0].Kills }\nDeaths: { BlueTeamCurrent[0].Deaths }\nK/D: {blueOneKD}\nDamage: { Math.Round(BlueTeamCurrent[0].Damage) }");
+      File.WriteAllText(_outputPath + $"/BlueTwo.txt", $"Gamertag: { BlueTeamCurrent[1].Gamertag }\nKills: { BlueTeamCurrent[1].Kills }\nDeaths: { BlueTeamCurrent[1].Deaths }\nK/D: {blueTwoKD}\nDamage: { Math.Round(BlueTeamCurrent[1].Damage) }");
+
       //var Kills = $"Kills: {ResponseObjects.Results[0].Result.CustomStats.TotalKills - StartKills}";
       //var Wins = $"Wins: {ResponseObjects.Results[0].Result.CustomStats.TotalGamesWon - StartWins}";
       //var Headshots = $"Headshots: {ResponseObjects.Results[0].Result.CustomStats.TotalHeadshots - StartHeadshots}";
